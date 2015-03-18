@@ -1,4 +1,4 @@
 # pansies-pensees
 ##Front End Area
 
-Inlcudes sandbox (jquery testing), design references, wireframes, etc
+Inlcudes sandbox (jquery/snap.svg testing), design references, wireframes, etc
