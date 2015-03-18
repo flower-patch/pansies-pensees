@@ -14,7 +14,7 @@ body {
   float: right;
 }
 
-.pattern-preview {
+.fabric-preview {
   list-style-type: none;
   display: inline-block;
   width: 5em;
