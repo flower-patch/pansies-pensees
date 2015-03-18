@@ -1,2 +1,8 @@
+@import '../bower_components/bourbon/app/assets/stylesheets/_bourbon';
+@import '../bower_components/neat/app/assets/stylesheets/_neat';
+@import '../bower_components/neat/app/assets/stylesheets/_neat-helpers';
 @import 'reset';
 @import 'defaults';
+@import 'colors';
+@import 'type';
+@import 'nav';
