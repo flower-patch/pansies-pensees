@@ -56,47 +56,51 @@ $(function () {
     }
   });
 
-  // svg.selectAll('path').forEach(function (path) {
-  //   path.dblclick(function () {
-  //     //empty palette, nothing happens!
-  //     if (!currFabric) return;
-  //     //use id for snappy shtuffz
-  //     var svgId = 'img_' + currFabric.id;
-  //     //pattern is used here because of svg pattern tag
-  //     //grabbing pattern tag for the current fabric obj via its id
-  //     var pattern = svg.select('#' + svgId);
-  //     // if this fabric does not exist, we adding it to the defs tag of the svg
-  //     // **In this case, it is being hard coded to our html file
-  //     //** Later, this will be an api thing (xml)
-  //     if (!pattern) {
-  //       pattern = svg.image(currFabric.url, 0, 0, currFabric.size.width, currFabric.size.height)
-  //        .toPattern(0, 0, currFabric.size.width, currFabric.size.height)
-  //        .attr({ id: svgId });
-  //     }
-  //     //clicked path (this) changes the fill attribute to the pattern var
-  //     this.attr('fill', pattern);
-  //   });
-  // });
-
-//Now,change lines 59-79 to a function
 
   svg.selectAll('path').forEach(function (path) {
-    path.dblclick(function () {
-      console.log('path clicked');
-      applyFabricPatch(path);
-    });
-    path.click(function () {
-      setTimeout(function () {
-        alert("Hello"); }, 100);
-      console.log('group clicked');
-      getGroup(path);
-    });
+    var prevent = false;
+    var timer = 0;
+    var delay = 200;
 
-    // path.click(function () {
-    //
-    // });
+    path
+      .click(function () {
+      timer = setTimeout(function () {
+        if (!prevent) {
+          console.log('group clicked');
+          getGroup(path);
+        }
+        prevent = false;
+      }, delay);
+      })
+      .dblclick(function () {
+        clearTimeout(timer);
+        prevent = true;
+        console.log('path clicked');
+        applyFabricPatch(path);
+      });
+
   });
 
+
+// var timer = 0;
+// var delay = 200;
+// var prevent = false;
+//
+// $("#target")
+//   .on("click", function() {
+//     timer = setTimeout(function() {
+//       if (!prevent) {
+//         doClickAction();
+//       }
+//       prevent = false;
+//     }, delay);
+//   })
+//   .on("dblclick", function() {
+//     clearTimeout(timer);
+//     prevent = true;
+//     doDoubleClickAction();
+//   });
+//
 
   function applyFabricPatch (path) {
     //empty palette, nothing happens!
@@ -123,7 +127,6 @@ $(function () {
     console.log(group);
 
     group.selectAll('path').forEach(applyFabricPatch);
-    // this.attr('fill', pattern);
   }
 
 });
