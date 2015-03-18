@@ -42,20 +42,6 @@ $(function () {
     currFabric = $(this).data('pattern');
     console.log(currFabric);
   });
-  //
-  // $('.container').on('click', 'path', function () {
-  //   addPattern(currFabric);
-  //
-  //   $(this).css({'fill': 'url("#' + currFabric.id + '")'});
-  //
-  // });
-
-  // $('svg path').each(function () {
-  //   if (!$(this).css('fill') || $(this).css('fill') === 'none') {
-  //
-  //     $(this).css({'fill': 'white'});
-  //   }
-  // });
 
   svg.selectAll('path').forEach(function (path) {
     console.log(path.attr('fill'));
@@ -81,68 +67,6 @@ $(function () {
       this.attr('fill', pattern);
     });
   });
-
-  // function addPattern (currFabric) {
-  //   if (!$('[id="' + currFabric.id + '"]').length) {
-  //     var img = $(document.createElementNS('http://www.w3.org/2000/svg','image'));
-  //     img.attr({
-  //       x: 0,
-  //       y: 0,
-  //       height: 50,
-  //       width: 50,
-  //       'xlink:href': currFabric.url
-  //     });
-  //
-  //     var pattern = $('<pattern id="' + currFabric.id + '" patternUnits="userSpaceOnUse" height="50" width="50"></pattern>');
-  //
-  //     pattern.append(img);
-  //
-  //     $('defs').append(pattern);
-  //   };
-  // }
-
-  // <image x="0" y="0" height="50" width="50" xlink:href="' + currFabric.url + '"></image>
-
-  // $('#greatphoto').attr({
-  //   alt: 'Beijing Brush Seller',
-  //   title: 'photo by Kelly Clark'
-  // });
-
-//
-  // function findPattern (currFabric) {
-  //   var patterns = $('defs');
-  //   for (var i = 0; i < patterns.length; ++i) {
-  //       if (patterns[i].id === currFabric.id) {
-  //           return patterns[i];
-  //       }
-  //   }
-  // }
-
-  // function removePattern
-
-  // $('.container').on('click', 'path', function () {
-  //   var patterns = $('defs')
-  //   $(this).css({'fill': 'url('')'})
-  //
-  //
-  // })
-
-
-
-
-
-  // $('svg path').each(function () {
-  //   if (!$(this).css('fill') || $(this).css('fill') === 'none') {
-  //
-  //     $(this).css({'fill': 'white'});
-  //   }
-  // });
-  //
-  // $('.container').on('click', 'path', function () {
-  //   $(this).css({'fill': 'url("#image")'});
-  //
-  // });
-
 
 
 });
