@@ -58,49 +58,28 @@ $(function () {
 
 
   svg.selectAll('path').forEach(function (path) {
+    // required arbitrary boolean
     var prevent = false;
+    // defines the functions called in timeout
     var timer = 0;
-    var delay = 200;
 
     path
       .click(function () {
       timer = setTimeout(function () {
         if (!prevent) {
-          console.log('group clicked');
           getGroup(path);
         }
         prevent = false;
-      }, delay);
+      }, 200);
       })
       .dblclick(function () {
         clearTimeout(timer);
         prevent = true;
-        console.log('path clicked');
         applyFabricPatch(path);
       });
 
   });
 
-
-// var timer = 0;
-// var delay = 200;
-// var prevent = false;
-//
-// $("#target")
-//   .on("click", function() {
-//     timer = setTimeout(function() {
-//       if (!prevent) {
-//         doClickAction();
-//       }
-//       prevent = false;
-//     }, delay);
-//   })
-//   .on("dblclick", function() {
-//     clearTimeout(timer);
-//     prevent = true;
-//     doDoubleClickAction();
-//   });
-//
 
   function applyFabricPatch (path) {
     //empty palette, nothing happens!
