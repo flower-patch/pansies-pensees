@@ -1,0 +1,23 @@
+main {
+  overflow: auto;
+}
+
+body {
+  background-color: #4e81bd;
+}
+
+.container {
+  float: left;
+}
+
+.palette {
+  float: right;
+}
+
+.pattern-preview {
+  list-style-type: none;
+  display: inline-block;
+  width: 5em;
+  height: 5em;
+  vertical-align: top;
+}
