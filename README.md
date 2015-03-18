@@ -1,4 +1,4 @@
 # pansies-pensees
 ##Front End Area
 
-Inlcudes sandbox (jquery testing), ui-mockups, style-guide
+Inlcudes sandbox (jquery testing), design references, wireframes, etc
